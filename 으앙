@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>문화생활 메인 레이아웃 미리보기</title>
+
+<style>
+/* ===== 초기 설정 ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:linear-gradient(135deg,#e8f5ff,#ffffff);
+  color:#1f2933;
+  min-height:100vh;
+}
+a{text-decoration:none;color:inherit;}
+
+/* ===== 헤더 ===== */
+header{
+  position:sticky;top:0;z-index:10;
+  padding:16px 32px; 
+  display:flex;justify-content:space-between;align-items:center;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.8);
+  box-shadow:0 6px 18px rgba(0,0,0,0.07);
+}
+.logo{
+  font-size:1.25rem;font-weight:700;
+}
+nav a{
+  margin-left:18px;
+  font-size:0.9rem;
+  opacity:0.85;
+}
+nav a:hover{opacity:1;}
+
+/* ===== 레이아웃 ===== */
+main{
+  max-width:1200px;
+  margin:32px auto;
+  padding:0 16px;
+  display:grid;
+  grid-template-columns:260px 1fr;
+  gap:24px;
+}
+
+/* ===== Glass Card ===== */
+.card{
+  background:rgba(255,255,255,0.65);
+  backdrop-filter:blur(16px);
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.9);
+  box-shadow:0 16px 38px rgba(0,0,0,0.09);
+  padding:20px;
+}
+
+/* ===== 왼쪽 영역 ===== */
+.sidebar{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.avatar{
+  width:80px;height:80px;
+  margin:auto;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#60a5fa,#a855f7);
+  font-weight:700;font-size:1.1rem;color:#fff;
+}
+.profile{text-align:center;margin-top:10px;}
+.profile p{font-size:0.9rem;color:#4b5563;margin-top:6px;}
+
+.sidebar h3{font-size:1rem;margin-bottom:8px;}
+.category-list{list-style:none;margin-top:6px;}
+.category-list li{
+  padding:8px 0;
+  font-size:0.95rem;
+  color:#374151;
+}
+
+/* ===== 오른쪽 영역 ===== */
+.content{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.placeholder-box{
+  height:140px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:0.95rem;
+  color:#6b7280;
+  border-radius:14px;
+  border:2px dashed rgba(160,160,160,0.35);
+}
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.category-title{
+  text-align:center;
+  font-size:1rem;
+  font-weight:600;
+  margin-bottom:10px;
+}
+
+.gallery {
+    display: flex; 
+    gap: 50px;   
+    }
+
+.poster-container{
+    position: relative;
+    display: inline-block; 
+    border-radius: 15px;
+    overflow: hidden; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+.poster-img {
+    display: block;
+    width: 250px; 
+    height: 270px;   
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+    }
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+            
+    display: flex;
+    justify-content: center;
+    align-items: center;
+            
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+            
+    opacity: 0;
+    transition: 0.3s;
+    }
+.poster-container:hover .overlay-text {
+    opacity: 1; 
+    }
+
+.poster-container:hover .poster-img {
+    transform: scale(1.05); 
+    }
+
+/* ===== 반응형 ===== */
+@media(max-width:960px){
+  main{grid-template-columns:1fr;}
+  .category-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:720px){
+  header{flex-direction:column;align-items:flex-start;gap:6px;}
+  .category-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">문화생활</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Archive</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 왼쪽: 프로필 + 카테고리 -->
+  <aside class="sidebar">
+    <section class="card">
+      <div class="avatar">CL</div>
+      <div class="profile">
+        <p>문화생활 기록</p>
+        <p style="font-size:0.85rem;color:#8795a1;">(여기에 소개문구가 들어갈 예정)</p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>카테고리</h3>
+      <ul class="category-list">
+        <li>🎬 영화 (Film)</li>
+        <li>🎭 연극 (Play)</li>
+        <li>🎙 뮤지컬 (Musical)</li>
+      </ul>
+    </section>
+  </aside>
+
+  <!-- 오른쪽: 3개 카테고리 콘텐츠 자리 -->
+  <section class="content">
+    <section class="card">
+      <p style="font-size:0.95rem;color:#4b5563;text-align:center;">
+        📌 이 영역은 블로그 콘텐츠가 들어가는 메인 화면입니다.<br>
+        아래 세 칸에 카테고리별 글 목록이 배치될 예정입니다.
+      </p>
+    </section>
+
+    <div class="category-grid">
+
+     <div class="gallery">
+        <a href="아마데우스.html" class="poster-container">
+        <img src="https://i.namu.wiki/i/NrcsTiTJ23JqV2shD6IhoOOn7PpLc60DbdWJlmT1KJ0BfActknvHAuMsAUhGgnvae7MDG8FQV6yB9Ad5mVJFRiF0TtLDMERCOHIq3LKDa6jWfxKlo37E_Z-DfBKU0ncxHx5AQeWwWdO2lUQcBHpTKw.webp" class="poster-img">
+        <div class="overlay-text">
+            아마데우스        
+        </div>
+        </a>
+
+        <a href="쉬어메드니스.html" class="poster-container">         
+        <img src="https://ticketimage.interpark.com/Play/image/large/19/19018229_p.gif" class="poster-img">
+        <div class="overlay-text">
+            쉬어메드니스
+        </div>
+        </a>
+
+        <a href="그을린사랑.html" class="poster-container">
+        <img src="https://i.namu.wiki/i/5JYXZnRDyXljffhUDkWJHKggbwML9VMVxoa4pY-oHndpsKe5U8411QIeJNQXilIfVCWTksusP_CdB7D8tthrB7Lw4ZKbDu3sCJWLbqHmE0l1aKtXYvg0ChpGg4mDXwJICz4EeZYfemQE9GeRMv1XgQ.webp" class="poster-img">
+        <div class="overlay-text">
+            그을린 사랑
+        </div>
+        </a>
+    </div>
+  </section>
+
+</main>
+
+<footer style="text-align:center;margin:30px 0;color:#7c8694;font-size:0.8rem;">
+  © 2025 문화생활 블로그 · 레이아웃 미리보기
+</footer>
+
+</body>
+</html>
