@@ -228,15 +228,16 @@ main{
         <a href="쉬어메드니스.html" class="poster-container">         
         <img src="https://ticketimage.interpark.com/Play/image/large/19/19018229_p.gif" class="poster-img">
         <div class="overlay-text">
-            쉬어메드니스
+            쉬어메드니스는 뭘까
         </div>
         </a>
 
         <a href="그을린사랑.html" class="poster-container">
         <img src="https://i.namu.wiki/i/5JYXZnRDyXljffhUDkWJHKggbwML9VMVxoa4pY-oHndpsKe5U8411QIeJNQXilIfVCWTksusP_CdB7D8tthrB7Lw4ZKbDu3sCJWLbqHmE0l1aKtXYvg0ChpGg4mDXwJICz4EeZYfemQE9GeRMv1XgQ.webp" class="poster-img">
         <div class="overlay-text">
-            그을린 사랑
+            그을린 사랑이란 무엇일까요
         </div>
+        <p>hjdshjdh</p>
         </a>
     </div>
   </section>
